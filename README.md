@@ -1,8 +1,8 @@
-#.config
+# .config
 
-## Here is my linux configuration files.
+## Configuration files.
 
-## Prograns list:
+### Programs list:
 
 * Polybar       - https://github.com/polybar/polybar
 * Rofi          - https://github.com/davatorium/rofi + https://github.com/adi1090x/rofi
@@ -12,7 +12,7 @@
 * Wallpaper     - https://github.com/ujjwal96/xwinwrap + mpv
 * ly(DM)        - https://github.com/cylgom/ly
 
-## System Fonts:
+### System Fonts:
 
 * SF Pro Display            - https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts
 * Font Awesome 5            - https://fontawesome.com/

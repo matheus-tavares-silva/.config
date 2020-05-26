@@ -18,7 +18,7 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-@import "styles/colors.rasi"
+@import "styles/s0berano.rasi"
 
 window {
     transparency:                   "real";
