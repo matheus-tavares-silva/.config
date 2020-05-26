@@ -1,0 +1,131 @@
+/*
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Mail : adi1090x@gmail.com
+ * Github : @adi1090x
+ * Reddit : @adi1090x
+ *
+ */
+
+configuration {
+	font:							"FantasqueSansMono Nerd Font 14";
+    show-icons:                     false;
+	icon-theme: 					"Papirus";
+    drun-display-format:            "{name}";
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+}
+
+@import "styles/colors.rasi"
+
+window {
+    transparency:                   "real";
+    background-color:               @background;
+    text-color:                     @foreground;
+    border-radius:                  0px;
+    height:                         140px;
+    width:                          285px;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
+	children: 						[ horibox ];
+}
+
+horibox {
+    background-color:               @background;
+    text-color:                     @foreground;
+	orientation: 					horizontal;
+	children: 						[ listview ];
+    margin:                         0px 0px 0px 0px;
+    padding:                        10px 10px 10px 10px;
+}
+
+prompt {
+    enabled: 						true;
+	padding: 						4px 4px 4px 4px;
+	background-color: 				@background-alt;
+	text-color: 					@foreground;
+}
+
+
+inputbar {
+	children: 						[ prompt ];
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    expand:                         false;
+    border:                  		1px;
+    border-radius:                  0px;
+    border-color:                  	@border;
+    margin:                         0px 0px 0px 0px;
+    padding:                        4px 4px 4px 4px;
+    position:                       center;
+}
+
+
+entry {
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    placeholder-color:              @foreground;
+    padding:                        4px 4px 4px 4px;
+    expand:                         false;
+    horizontal-align:               0;
+    placeholder:                    "Search";
+    blink:                          true;
+}
+
+case-indicator {
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    spacing:                        0;
+}
+
+listview {
+    background-color:               @background;
+    padding:                        2px 2px 2px 2px;
+    spacing:                        10px;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         horizontal;
+}
+
+element {
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    orientation:                    horizontal;
+    border-radius:                  0px;
+    padding:                        2px 2px 2px 2px;
+}
+
+element-icon {
+    size:                           65px;
+    border:                         0px;
+}
+
+element-text {
+	font:							"feather 30";
+    expand:                         false;
+    horizontal-align:               0;
+    vertical-align:                 0;
+    margin:                         32px 32px 32px 32px;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+}
+
+element selected {
+    background-color:               @selected;
+    text-color:                     @foreground;
+    border:                  		1px;
+    border-radius:                  0px;
+    border-color:                  	@border;
+}
+
+element selected.active {
+    background-color:               @background-alt;
+    color:                          @foreground;
+}
