@@ -1,4 +1,4 @@
-@import "styles/colors.rasi"
+@import "s0berano.rasi"
 
 * {
     background-color:       @background;

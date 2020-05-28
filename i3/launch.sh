@@ -21,7 +21,7 @@ while pgrep -u $UID -f auto_xset.py > /dev/null; do sleep 1; done
 
 $HOME/.config/i3/scripts/auto_xset.py &
 
-
+#Starts rclone to sync whit my Drive
 while pgrep -u $UID -f rclone > /dev/null; do sleep 1; done
 
 rclone --vfs-cache-mode writes mount googledrive: ~/Drive || \

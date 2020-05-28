@@ -21,7 +21,7 @@ configuration {
 	sidebar-mode: false;
 }
 
-@import "s0berano.rasi"
+@import "colors.rasi"
 
 * {
   text-font:                            "SF Pro Display 13.5";

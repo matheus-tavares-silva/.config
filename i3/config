@@ -103,7 +103,7 @@ bindsym $mod+r mode "resize"
 
 # Personal configuration
 for_window [class=".*"] border pixel 0
-border_radius 0
+# border_radius 0
 
 gaps inner 6
 #gaps outer 2
@@ -121,5 +121,5 @@ gaps inner 6
 
 # Initializing programs with i3
 exec_always --no-startup-id $HOME/.config/i3/launch.sh &
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh &   #Initializes polybar and redshift
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh & 
 exec_always --no-startup-id rclone --vfs-cache-mode writes mount googledrive: ~/Drive &
