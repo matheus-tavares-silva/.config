@@ -1,6 +1,6 @@
 #!usr/bin/env sh
 
-wallpaper_name="evening_streets.mp4"
+wallpaper_name="Serenity-Anime-Girl-Landscape-Live-Wallpaper.mp4"
 wallpaper_folder="$HOME/.config/wallpaper/"
 walpaper_path="$wallpaper_folder$wallpaper_name"
 

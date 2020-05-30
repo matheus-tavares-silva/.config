@@ -1,15 +1,15 @@
 [colors]
-background = #99303030
-glyph = #FF303030
-foreground = ${xrdb:color15:#ebebeb}
-active = #888888
-inactive = #5d5d5d
-error = ${xrdb:color9:#2a6a9e}
-
+background  = #00000000
+glyph       = #FF303030
+foreground  = #FFFCFCFC
+active      = #FF888888
+inactive    = #FF5d5d5d
+online      = #FF00A08F
+offline     = #FFF66747
 
 [bar/bar0]
 width = 100%
-height = 30
+height = 28
 radius = 0
 bottom = false
 
@@ -25,23 +25,49 @@ font-0 = "SF Pro Display:style=Semibold:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10.5;1"
 font-2 = "Font Awesome 5 Brands:style=Solid:size=10.5;1"
 font-3 = "Inconsolata Nerd Font:style=Regular:size=12;1"
-font-4 = "Powerline Extra Symbols:style=Regular:pixelsize=30;6"
-font-5 = "Powerline Extra Symbols:style=Regular:pixelsize=50;-13"
+font-4 = "Powerline Extra Symbols:style=Regular:pixelsize=20;5"
 
-modules-left = "menu arrow redshift arrow i3 arrow1"
-;modules-left = "arrow arrow1"
-modules-center = "date"
-;modules-right = "arrow2 arrow"
-modules-right = "arrow2 volume arrow cpu arrow memory arrow filesystem"
+modules-left = "arrgwh wired-network arlrwh arrgbk redshift arlrbk-spc"
+modules-center = "arrgbk date iarlrbk-spc"
+modules-right = "iarrgbk volume iarlrbk-spc"
+
+
+[bar/bar1]
+width = 100%
+height = 28
+radius = 0
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-left-size = 0.4%
+border-right-size = 0.4%
+border-bottom-size = 0.8%
+border-top-size = 0
+
+font-0 = "SF Pro Display:style=Semibold:size=10;1"
+font-1 = "Font Awesome 5 Free:style=Solid:size=10.5;1"
+font-2 = "Font Awesome 5 Brands:style=Solid:size=10.5;1"
+font-3 = "Inconsolata Nerd Font:style=Regular:size=12;1"
+font-4 = "Powerline Extra Symbols:style=Regular:pixelsize=20;5"
+
+modules-left = "iarrgwh menu iarlrwh iarrgbk i3 iarlrbk-spc"
+modules-center = ""
+modules-right = "arrgwh cpu arlrwh arrgbk memory arlrbk arrgwh filesystem arlrwh-spc"
+
+
 
 [module/menu]
 type = custom/text
-content = "  Menu"
+content = "  Menu "
 ;alt-icon =  
 
-content-padding = 3
+content-padding = 0
 
-content-background = ${colors.glyph}
+content-background = ${colors.foreground}
+content-foreground = ${colors.glyph}
+
 
 [module/i3]
 type = internal/i3
@@ -72,6 +98,7 @@ label-urgent-padding = 4
 [module/mpd]
 type = internal/mpd
 format-online = <label-song> <icon-prev> <icon-stop> <toggle> <icon-next>
+format-offline = <label-offline>
 
 icon-play = ⏵
 icon-pause = ⏸
@@ -81,8 +108,12 @@ icon-next = ⏭
 
 label-song-maxlen = 25
 label-song-ellipsis = true
-format-playing-padding = 2
-format-playing-background = ${colors.highlight}
+format-playing-padding = 0
+format-playing-background = ${colors.foreground}
+format-playing-foreground = ${colors.glyph}
+
+
+label-offline = 🎜 mpd is offline
 
 [module/date]
 type = internal/date
@@ -93,7 +124,7 @@ time = "%H:%M"
 
 format = <label>
 format-padding = 2
-format-background = ${colors.background}
+format-background = ${colors.glyph}
 
 label = %date%, %time%      
 
@@ -109,7 +140,6 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 ramp-volume-foreground = ${colors.foreground}
-
 
 format-muted-prefix = ""
 format-muted-foreground = ${colors.foreground}
@@ -128,7 +158,9 @@ type = internal/cpu
 format-padding = 2
 
 interval = 3
-format-background = ${colors.glyph}
+format-foreground = ${colors.glyph}
+format-background = ${colors.foreground}
+
 
 format = <label>
 
@@ -164,8 +196,33 @@ format-unmounted = <label-unmounted>
 label-mounted = "   %percentage_free%%  "
 label-unmounted = "   %mountpoint%  "
 
-label-mounted-background = ${colors.glyph}
-label-unmounted-background = ${colors.glyph}
+label-mounted-background = ${colors.foreground}
+label-unmounted-background = ${colors.foreground}
+label-mounted-foreground = ${colors.glyph}
+label-unmounted-foreground = ${colors.glyph}
+
+
+[module/wired-network]
+type = internal/network
+interface = eno1
+
+interval = 3.0
+ping-interval = 10
+unknown-as-up = true
+accumulate-stats = true
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected = "  Online "
+label-connected-foreground = ${colors.online}
+label-connected-background = ${colors.foreground}
+
+label-disconnected = "  Offline "
+label-disconnected-foreground = ${colors.offline}
+label-disconnected-background = ${colors.foreground}
+
+
 
 [module/redshift]
 type = custom/script
@@ -177,28 +234,88 @@ tail = true
 interval = 0.5
 
 format-prefix = " "  
-format-padding = 2
 format-background = ${colors.glyph}
 
-[module/arrow1]
+[module/arlrwh]
 type = custom/text
-content = ""
-content-foreground = ${colors.glyph}
-content-background = ${colors.background}
-content-font = 6
-content-padding = 1
- 
-[module/arrow]
-type = custom/text
-content = "|"
-content-foreground = ${colors.active}
-content-background = ${colors.glyph}
-content-font = 4
- 
-[module/arrow2]
-type = custom/text
-content = ""
-content-foreground = ${colors.glyph}
-content-background = ${colors.background}
+content = "%{O2}"
+content-foreground = ${colors.foreground}
 content-font = 5
-content-padding = 2
+content-padding = 0
+
+[module/arrgwh]
+type = custom/text
+content = "%{O1}%{O12}"
+content-foreground = ${colors.foreground}
+content-font = 5
+content-padding = 0
+
+[module/arlrbk]
+type = custom/text
+content = "%{O2}"
+content-foreground = ${colors.glyph}
+content-font = 5
+content-padding = 0
+
+[module/arrgbk]
+type = custom/text
+content = "%{O1}%{O12}"
+content-foreground = ${colors.glyph}
+content-font = 5
+content-padding = 0
+
+
+;
+
+[module/iarlrwh]
+type = custom/text
+content = "%{O2}"
+content-foreground = ${colors.foreground}
+content-font = 5
+content-padding = 0
+
+[module/iarrgwh]
+type = custom/text
+content = "%{O1}%{O12}"
+content-foreground = ${colors.foreground}
+content-font = 5
+content-padding = 0
+
+[module/iarlrbk]
+type = custom/text
+content = "%{O2}"
+content-foreground = ${colors.glyph}
+content-font = 5
+content-padding = 0
+
+[module/iarrgbk]
+type = custom/text
+content = "%{O1}%{O12}"
+content-foreground = ${colors.glyph}
+content-font = 5
+content-padding = 0
+
+;
+
+[module/arlrbk-spc]
+type = custom/text
+content = "%{O2}%{O12}"
+content-foreground = ${colors.glyph}
+content-font = 5
+content-padding = 0
+
+[module/arlrwh-spc]
+type = custom/text
+content = "%{O2}%{O12}"
+content-foreground = ${colors.foreground}
+content-font = 5
+content-padding = 0
+
+;
+
+[module/iarlrbk-spc]
+type = custom/text
+content = "%{O2}%{O10}"
+content-foreground = ${colors.glyph}
+content-font = 5
+content-padding = 0
