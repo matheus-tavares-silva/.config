@@ -22,14 +22,14 @@ border-bottom-size = 0
 border-top-size = 0.8%
 
 font-0 = "SF Pro Display:style=Semibold:size=10;1"
-font-1 = "Font Awesome 5 Free:style=Solid:size=10.5;1"
+font-1 = "Font Awesome 5 Pro:style=Solid:size=10.5;1"
 font-2 = "Font Awesome 5 Brands:style=Solid:size=10.5;1"
 font-3 = "Inconsolata Nerd Font:style=Regular:size=12;1"
 font-4 = "Powerline Extra Symbols:style=Regular:pixelsize=20;5"
 
 modules-left = "arrgwh wired-network arlrwh arrgbk redshift arlrbk-spc"
-modules-center = "arrgbk date iarlrbk-spc"
-modules-right = "iarrgbk volume iarlrbk-spc"
+modules-center = "arrgbk date-calendar iarlrbk-spc"
+modules-right = "iarrgbk volume iarlrbk iarrgwh date-clock iarlrwh-spc"
 
 
 [bar/bar1]
@@ -47,16 +47,14 @@ border-bottom-size = 0.8%
 border-top-size = 0
 
 font-0 = "SF Pro Display:style=Semibold:size=10;1"
-font-1 = "Font Awesome 5 Free:style=Solid:size=10.5;1"
+font-1 = "Font Awesome 5 Pro:style=Solid:size=10.5;1"
 font-2 = "Font Awesome 5 Brands:style=Solid:size=10.5;1"
 font-3 = "Inconsolata Nerd Font:style=Regular:size=12;1"
 font-4 = "Powerline Extra Symbols:style=Regular:pixelsize=20;5"
 
 modules-left = "iarrgwh menu iarlrwh iarrgbk i3 iarlrbk-spc"
-modules-center = ""
+modules-center = "iarrgwh weather arlrwh-spc"
 modules-right = "arrgwh cpu arlrwh arrgbk memory arlrbk arrgwh filesystem arlrwh-spc"
-
-
 
 [module/menu]
 type = custom/text
@@ -68,6 +66,13 @@ content-padding = 0
 content-background = ${colors.foreground}
 content-foreground = ${colors.glyph}
 
+[module/weather]
+type = custom/script
+exec = sh ~/.config/polybar/scripts/weather.sh
+interval = 600
+label-foreground = ${colors.glyph}
+label-background = ${colors.foreground}
+label-font = 1
 
 [module/i3]
 type = internal/i3
@@ -115,18 +120,33 @@ format-playing-foreground = ${colors.glyph}
 
 label-offline = 🎜 mpd is offline
 
-[module/date]
+[module/date-calendar]
 type = internal/date
 interval = 5
 
-date = "%A %d %B %Y"
-time = "%H:%M"
+date = "  %A %d %B %Y"
 
 format = <label>
 format-padding = 2
 format-background = ${colors.glyph}
+format-foreground = ${colors.foreground}
 
-label = %date%, %time%      
+
+label = %date%     
+
+[module/date-clock]
+type = internal/date
+interval = 5
+
+time = " %H:%M"
+
+format = <label>
+format-padding = 2
+format-background = ${colors.foreground}
+format-foreground = ${colors.glyph}
+
+
+label = %time%   
 
 [module/volume]
 type = internal/pulseaudio
@@ -214,15 +234,11 @@ accumulate-stats = true
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
-label-connected = "  Online "
-label-connected-foreground = ${colors.online}
+label-connected = "%{F#FF303030}%{F-}%{F#FF679267} Online%{F-}"
 label-connected-background = ${colors.foreground}
 
-label-disconnected = "  Offline "
-label-disconnected-foreground = ${colors.offline}
+label-disconnected = ""%{F#FF303030}%{F-}%{F#FF800000} Offline%{F-}"
 label-disconnected-background = ${colors.foreground}
-
-
 
 [module/redshift]
 type = custom/script
@@ -315,7 +331,14 @@ content-padding = 0
 
 [module/iarlrbk-spc]
 type = custom/text
-content = "%{O2}%{O10}"
+content = "%{O2}%{O12}"
 content-foreground = ${colors.glyph}
+content-font = 5
+content-padding = 0
+
+[module/iarlrwh-spc]
+type = custom/text
+content = "%{O2}%{O12}"
+content-foreground = ${colors.foreground}
 content-font = 5
 content-padding = 0
