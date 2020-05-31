@@ -25,6 +25,7 @@ mpv \
 --no-input-default-bindings \
 --no-osd-bar \
 --no-sub \
+--no-stop-screensaver \
 --wid WID \
 --loop $walpaper_path
 
@@ -49,6 +50,7 @@ mpv \
 --no-input-default-bindings \
 --no-osd-bar \
 --no-sub \
+--no-stop-screensaver \
 --wid WID \
 --loop $walpaper_path
 

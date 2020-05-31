@@ -27,7 +27,7 @@ i3lock \
 --timecolor=$T        \
 --datecolor=$T        \
 --layoutcolor=$T      \
---keyhlcolor=$V       \
+--keyhlcolor=$T       \
 --bshlcolor=$V        \
 \
 --screen 1            \
