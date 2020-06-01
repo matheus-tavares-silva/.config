@@ -19,8 +19,7 @@ def process_exists() :
 
     return False
 
-def enable_redshift() :
-    
+def enable_redshift() : 
     try :
         print('Enabling...')
         os.system(ENABLE_PROCESS)
@@ -29,7 +28,6 @@ def enable_redshift() :
 
 
 def disable_redshift() :
-
     try :
         print('Disabling...')
         process = subprocess.Popen(DISABLE_PROCESS.split())

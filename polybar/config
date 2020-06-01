@@ -29,7 +29,7 @@ font-4 = "Powerline Extra Symbols:style=Regular:pixelsize=20;5"
 
 modules-left = "arrgwh wired-network arlrwh arrgbk redshift arlrbk-spc"
 modules-center = "arrgbk date-calendar iarlrbk-spc"
-modules-right = "iarrgbk volume iarlrbk iarrgwh date-clock iarlrwh-spc"
+modules-right = "iarrgwh mpd iarlrwh iarrgbk volume iarlrbk iarrgwh date-clock iarlrwh-spc"
 
 
 [bar/bar1]
@@ -102,14 +102,26 @@ label-urgent-padding = 4
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song> <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random> <label-time>  <label-song>
 format-offline = <label-offline>
 
-icon-play = ⏵
-icon-pause = ⏸
-icon-stop = ⏹
-icon-prev = ⏮
-icon-next = ⏭
+host = 127.0.0.1
+port = 6600
+password = 'any'
+interval = 2
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-seekb = 
+icon-seekf = 
+icon-random = 
+icon-repeat = 
+icon-repeatone = 
+icon-single = 
+icon-consume = 
 
 label-song-maxlen = 25
 label-song-ellipsis = true
@@ -117,8 +129,9 @@ format-playing-padding = 0
 format-playing-background = ${colors.foreground}
 format-playing-foreground = ${colors.glyph}
 
-
-label-offline = 🎜 mpd is offline
+label-offline =  Music
+format-offline-background = ${colors.foreground}
+format-offline-foreground = ${colors.glyph}
 
 [module/date-calendar]
 type = internal/date
@@ -234,11 +247,15 @@ accumulate-stats = true
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
-label-connected = "%{F#FF303030}%{F-}%{F#FF679267} Online%{F-}"
+label-connected = " Online"
 label-connected-background = ${colors.foreground}
+label-connected-foreground = ${colors.glyph}
 
-label-disconnected = ""%{F#FF303030}%{F-}%{F#FF800000} Offline%{F-}"
+
+label-disconnected = " Offline"
 label-disconnected-background = ${colors.foreground}
+label-disconnected-foreground = ${colors.glyph}
+
 
 [module/redshift]
 type = custom/script
