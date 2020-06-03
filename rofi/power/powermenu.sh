@@ -37,11 +37,9 @@ case $chosen in
         prompt_confirm "sh ~/.config/i3/scripts/locker.sh"
     ;;
     $suspend)	 
-        prompt_confirm "mpc -q pause \
-            amixer set Master mute \
-            systemctl suspend"
+        prompt_confirm "systemctl suspend && sh ~/.config/i3/scripts/locker.sh"
     ;;
     $logout)
-        prompt_confirm "openbox --exit"
+        prompt_confirm "i3-msg exit"
     ;;
 esac
