@@ -1,7 +1,7 @@
 [colors]
 background  = #00000000
-glyph       = #FF303030
-foreground  = #FFFCFCFC
+glyph       = #FF623A43
+foreground  = #FFE78C6D
 active      = #FF888888
 inactive    = #FF5d5d5d
 online      = #FF00A08F

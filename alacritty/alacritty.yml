@@ -142,7 +142,7 @@ font:
     style: Italic
 
   # Point size
-  size: 11.5
+  size: 12.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -179,29 +179,29 @@ draw_bold_text_with_bright_colors: true
 # Colors (Tomorrow Night Bright)
 colors:
   primary:
-    background: '#303030'
-    foreground: '#FCFCFC'
+    background: '0x623A43'
+    foreground: '0xFBB682'
   cursor:
-    text: '0x2E3440'
+    text: '0xB096A4'
     cursor: '0xD8DEE9'
   normal:
-    black: '0x3B4252'
+    black: '0x271528'
     red: '0xBF616A'
     green: '0xA3BE8C'
     yellow: '0xEBCB8B'
     blue: '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan: '0x88C0D0'
+    magenta: '0xB096A4'
+    cyan: '0x895a6c'
     white: '0xE5E9F0'
   bright:
-    black: '0x4C566A'
+    black: '0x271528'
     red: '0xBF616A'
     green: '0xA3BE8C'
     yellow: '0xEBCB8B'
     blue: '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan: '0x8FBCBB'
-    white: '0xECEFF4'
+    magenta: '0xB096A4'
+    cyan: '0x895a6c'
+    white: '0xFCFCFC'
  
 # background_opacity: 1
 

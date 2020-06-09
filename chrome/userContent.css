@@ -1,0 +1,31 @@
+@import "_variables.css";
+
+@-moz-document url(about:blank), url(about:newtab), url(about:home) {
+    html:not(#ublock0-epicker),
+    html:not(#ublock0-epicker) body,
+    #newtab-customize-overlay {
+        background: var(--dark-gray) !important;
+    }
+
+    .search-wrapper input {
+        background-color: var(--dark-gray) !important;
+        color: var(--light-gray) !important;
+        box-shadow: none !important;
+        border: 1px solid var(--dark-red) !important;
+        border-radius: 5px !important;
+    }
+
+    .search-wrapper input:focus {
+        color: var(--white) !important;
+    }
+
+    .search-wrapper .search-button {
+        fill: var(--light-gray) !important;
+    }
+
+    .search-wrapper .search-button:focus,
+    .search-wrapper .search-button:hover {
+        background-color: transparent !important;
+        fill: var(--white) !important;
+    }
+}

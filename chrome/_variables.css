@@ -1,0 +1,25 @@
+:root {
+    --moonlight-gray-10: #c8d3f5;
+    --moonlight-gray-9: #b4c2f0;
+    --moonlight-gray-8: #a9b8e8;
+    --moonlight-gray-7: #aaaf;
+    --moonlight-gray-6: #444a73;
+    --moonlight-gray-5: #e78c6d;
+    --moonlight-gray-4: #8f6971;
+    --moonlight-gray-3: #1e2030;
+    --moonlight-gray-1: #645457;
+    --scrollbar-chrome-size: 6px;
+    
+    
+    --blue: #af411d;
+    --red: #d63601;
+    --dark-red: #f55f2d;
+    --yellow: #ffc777;
+
+    --pure-white: #eb825f;
+    --white: #e78c6d;
+    --light-gray: #dfa28e;
+    --middle-gray: #975b68;
+    --dark-gray: #623a43;
+    --black: #7c4551;
+}
