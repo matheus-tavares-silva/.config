@@ -4,7 +4,7 @@
  */
 
 configuration {
-    drun-display-format: "{icon} {name}";
+    drun-display-format: "{icon}  {name}";
     display-drun: "Applications";
 	show-icons: true;
 	icon-theme: "Papirus";
@@ -17,7 +17,7 @@ configuration {
 	bw: 0;
     fullscreen: false;
     show-icons: true;
-	terminal: "termite";
+	terminal: "alacritty";
 	sidebar-mode: false;
 }
 
@@ -28,18 +28,18 @@ configuration {
 
   inputbar-margin:                      3px 3px;
   prompt-padding:                       10px 10px;
-  entry-padding:                        10px 0px 10px 0px;
+  entry-padding:                        10px 0px 10px 2px;
   list-element-padding:                 10px;
   list-element-margin:                  @inputbar-margin;
   list-element-border:                  0px 0px 0px 4px;
 
-  apps-textbox-prompt-colon-padding:    10px -5px 0px 0px;
+  apps-textbox-prompt-colon-padding:    10px 0px 0px 0px;
 }
 
 #window {
   width: 50%;
   height: 60%;
-  padding: 40px 40px;
+  padding: 20px 20px 20px 20px;
 }
 
 * {
@@ -68,7 +68,8 @@ entry {
 
 #textbox-prompt-colon {
   expand: false;
-  str: "  ::  ";
+  text-color: @accent;
+  str: " ❯ ";
   padding: @apps-textbox-prompt-colon-padding;
 }
 

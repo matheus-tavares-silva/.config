@@ -10,4 +10,4 @@ GtkTheme=Flat-Remix-GTK-Blue-Darker-Solid
 MetacityTheme=Flat-Remix-GTK-Blue-Darker-Solid
 IconTheme=Flat-Remix-Blue
 CursorTheme=DMZ-Black
-ButtonLayout=menu:minimize,maximize,close
+ButtonLayout=menu:none
