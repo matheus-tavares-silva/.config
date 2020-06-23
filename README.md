@@ -4,13 +4,13 @@
 
 ### Programs list:
 
-* Polybar       - https://github.com/polybar/polybar
-* Rofi          - https://github.com/davatorium/rofi + https://github.com/adi1090x/rofi
-* i3-gaps       - https://github.com/Airblader/i3
-* i3lock-color  - https://github.com/Raymo111/i3lock-color
-* Compton       - https://github.com/chjj/compton
-* Wallpaper     - https://github.com/ujjwal96/xwinwrap + mpv
-* ly(DM)        - https://github.com/cylgom/ly
+* Polybar        - https://github.com/polybar/polybar
+* Rofi           - https://github.com/davatorium/rofi  + https://github.com/adi1090x/rofi
+* i3-gaps        - https://github.com/Airblader/i3
+* i3lock-color   - https://github.com/Raymo111/i3lock-color
+* Compton        - https://github.com/chjj/compton
+* Live Wallpaper - https://github.com/ujjwal96/xwinwrap + mpv
+* SDDM           - https://github.com/sddm/sddm
 
 ### System Fonts:
 
