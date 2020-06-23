@@ -110,4 +110,6 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     fi
 
     echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL   $daytime"
-fi
+else
+    echo "  Disconnected "
+fi 

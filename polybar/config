@@ -59,12 +59,14 @@ modules-right = "arrgwh cpu arlrwh arrgbk memory arlrbk arrgwh filesystem arlrwh
 [module/menu]
 type = custom/text
 content = "  Menu "
-;alt-icon =  
+alt-icon = ""
 
 content-padding = 0
 
 content-background = ${colors.foreground}
 content-foreground = ${colors.glyph}
+
+click-left = /home/s0berano/.config/rofi/launchers/launcher.sh
 
 [module/weather]
 type = custom/script
@@ -251,11 +253,9 @@ label-connected = " Online"
 label-connected-background = ${colors.foreground}
 label-connected-foreground = ${colors.glyph}
 
-
 label-disconnected = " Offline"
 label-disconnected-background = ${colors.foreground}
 label-disconnected-foreground = ${colors.glyph}
-
 
 [module/redshift]
 type = custom/script
@@ -266,7 +266,6 @@ click-left  = python3 ~/.config/polybar/scripts/redshift-toggle.py set
 tail = true
 interval = 0.5
 
-format-prefix = " "  
 format-background = ${colors.glyph}
 
 [module/arlrwh]

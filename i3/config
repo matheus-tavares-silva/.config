@@ -103,6 +103,9 @@ bindsym $mod+r mode "resize"
 
 # Personal configuration
 for_window [class=".*"] border pixel 0
+font SF Pro Display: 10
+hide_edge_borders both
+
 # border_radius 0
 
 gaps inner 6
@@ -114,12 +117,12 @@ gaps inner 6
 #gaps right 2
 #gaps bottom 2
 
+
 #smart_gaps on
 #hide_edge_borders on
 #smart_borders on
 #smart_borders no_gaps
 
 # Initializing programs with i3
-exec_always --no-startup-id $HOME/.config/i3/launch.sh &
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh & 
+exec_always --no-startup-id $HOME/.config/i3/launch.sh
 exec_always --no-startup-id rclone --vfs-cache-mode writes mount googledrive: ~/Drive &

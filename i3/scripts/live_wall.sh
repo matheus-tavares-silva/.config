@@ -1,12 +1,19 @@
 #!usr/bin/env sh
 
+killall xwinwrap
+
 wallpaper_name="Serenity2.mpv"
 wallpaper_folder="$HOME/.config/wallpaper/"
 walpaper_path="$wallpaper_folder$wallpaper_name"
 
+echo "Starting live wallpaper...\n"
+
+while pgrep -x xwinwrap > /dev/null; do sleep 1; done
+#sh $script/live_wall.sh &
+
 # Starts live wallpaper on monitor 1
 xwinwrap \
--g 2720x768+0+0 \
+-g 2732x768+0+0 \
 -un \
 -fdt \
 -ni \
@@ -28,3 +35,5 @@ mpv \
 --no-stop-screensaver \
 --wid WID \
 --loop $walpaper_path
+
+echo "Done...\n\n"

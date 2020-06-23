@@ -6,13 +6,13 @@ import time
 '''
 This script enable or disable screen savior if exists any window in fullscreen.
 '''
-monitor_status = 'xset -q'
-set_monitor_on = 'xset s off'
+monitor_status  = 'xset -q'
+set_monitor_on  = 'xset s off'
 set_monitor_off = 'xset dpms 0 0 '
-i3_cmd = 'i3-msg -t get_tree'
-suspend = 'systemctl suspend'
-locker_status = 'pgrep -f i3lock'
-lock_screen = 'sh /home/s0berano/.config/i3/scripts/locker.sh'
+i3_cmd          = 'i3-msg -t get_tree'
+suspend         = 'systemctl suspend'
+locker_status   = 'pgrep -f i3lock'
+lock_screen     = 'sh /home/s0berano/.config/i3/scripts/locker.sh'
 
 def get_layout():
     get_tree = subprocess.Popen(i3_cmd.split(), stdout=subprocess.PIPE)

@@ -39,9 +39,9 @@ if __name__ == "__main__":
 
     state = process_exists()
     if(state):
-        print('On')
+        print(' On')
     else:
-        print('Off')
+        print(' Off')
 
     if(len(sys.argv) > 1):
         if(sys.argv[1] == 'set' and not state) :
