@@ -27,7 +27,7 @@ font-2 = "Font Awesome 5 Brands:style=Solid:size=10.5;1"
 font-3 = "Inconsolata Nerd Font:style=Regular:size=12;1"
 font-4 = "Powerline Extra Symbols:style=Regular:pixelsize=20;5"
 
-modules-left = "arrgwh wired-network arlrwh arrgbk redshift arlrbk-spc"
+modules-left = "arrgwh wired-network arlrwh arrgbk redshift arlrbk arrgwh packages arlrwh-spc"
 modules-center = "arrgbk date-calendar iarlrbk-spc"
 modules-right = "iarrgwh mpd iarlrwh iarrgbk volume iarlrbk iarrgwh date-clock iarlrwh-spc"
 
@@ -67,6 +67,14 @@ content-background = ${colors.foreground}
 content-foreground = ${colors.glyph}
 
 click-left = /home/s0berano/.config/rofi/launchers/launcher.sh
+
+[module/packages]
+type = custom/script
+exec = python3 ~/.config/polybar/scripts/check_updates.py
+interval = 600
+label-foreground = ${colors.glyph}
+label-background = ${colors.foreground}
+label-font = 1
 
 [module/weather]
 type = custom/script
