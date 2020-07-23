@@ -71,7 +71,7 @@ click-left = /home/s0berano/.config/rofi/launchers/launcher.sh
 [module/packages]
 type = custom/script
 exec = python3 ~/.config/polybar/scripts/check_updates.py
-interval = 600
+interval = 5
 label-foreground = ${colors.glyph}
 label-background = ${colors.foreground}
 label-font = 1
